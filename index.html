@@ -17,6 +17,27 @@
 
 	<!-- Theme CSS -->
 	<link href="css/freelancer.css" rel="stylesheet">
+  <!-- Calculator JS -->
+  <script src="js/calculator.js"></script>
+  <!-- Calculator function -->
+  <script>
+    function computeSaving() {
+                var coffee = document.getElementById('coffee').value * 3;
+                var burger = document.getElementById('burger').value * 8;
+                var pizza = document.getElementById('pizza').value * 20;
+                var movie = document.getElementById('movie').value * 14;
+                var totalMonth = coffee + burger + pizza + movie;
+                var totalYear = totalMonth * 12;
+                var result = 0;
+                for (i = 0; i < 30; i++)
+                {
+                    result = result + totalYear;
+                    result = (result * 1.07);
+                }
+                result = result.toFixed(2).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+                document.getElementById('result').innerHTML = "Your total saving after 30 years could be: $" + result;
+            }
+            </script>
 
 </head>
 
@@ -33,7 +54,7 @@
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item mx-0 mx-lg-1">
-            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#portfolio">Portfolio</a>
+            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#portfolio">Portfolio (pending)</a>
           </li>
           <li class="nav-item mx-0 mx-lg-1">
             <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#about">About</a>
@@ -42,7 +63,7 @@
             <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#steps">Steps (pending)</a>
           </li>
           <li class="nav-item mx-0 mx-lg-1">
-            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#calculator">Calculator (pending)</a>
+            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#calculator">Calculator</a>
           </li>
           <li class="nav-item mx-0 mx-lg-1">
             <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#contact">Contact</a>
@@ -105,7 +126,7 @@
                 <i class="fas fa-plus fa-3x"></i>
               </div>
             </div>
-            <img class="img-fluid" src="img/portfolio/cabin.png" alt="">
+            <img class="img-fluid" src="img/portfolio/1.png" alt="">
           </div>
         </div>
 
@@ -117,7 +138,7 @@
                 <i class="fas fa-plus fa-3x"></i>
               </div>
             </div>
-            <img class="img-fluid" src="img/portfolio/cake.png" alt="">
+            <img class="img-fluid" src="img/portfolio/2.png" alt="">
           </div>
         </div>
 
@@ -129,7 +150,7 @@
                 <i class="fas fa-plus fa-3x"></i>
               </div>
             </div>
-            <img class="img-fluid" src="img/portfolio/circus.png" alt="">
+            <img class="img-fluid" src="img/portfolio/3.png" alt="">
           </div>
         </div>
 
@@ -141,7 +162,7 @@
                 <i class="fas fa-plus fa-3x"></i>
               </div>
             </div>
-            <img class="img-fluid" src="img/portfolio/game.png" alt="">
+            <img class="img-fluid" src="img/portfolio/4.png" alt="">
           </div>
         </div>
 
@@ -153,7 +174,7 @@
                 <i class="fas fa-plus fa-3x"></i>
               </div>
             </div>
-            <img class="img-fluid" src="img/portfolio/safe.png" alt="">
+            <img class="img-fluid" src="img/portfolio/5.png" alt="">
           </div>
         </div>
 
@@ -165,7 +186,7 @@
                 <i class="fas fa-plus fa-3x"></i>
               </div>
             </div>
-            <img class="img-fluid" src="img/portfolio/submarine.png" alt="">
+            <img class="img-fluid" src="img/portfolio/6.png" alt="">
           </div>
         </div>
 
@@ -249,7 +270,7 @@
   </section>
 
   <!-- Calculator Section -->
-  <section class="page-section bg-primary text-white mb-0" id="about">
+  <section class="page-section bg-primary text-white mb-0" id="calculator">
     <div class="container">
 
       <!-- About Section Heading -->
@@ -263,6 +284,77 @@
         </div>
         <div class="divider-custom-line"></div>
       </div>
+      <!-- Sliders part -->
+      <div class="col-lg-8 mx-auto">
+         <h2>What if you saved those money?</h2>
+         <p class="lead">*Money saved from cutting these purchases on a monthly basis</p>
+         <p class="lead">**Money grown for the next 30 years, with assumption of annual return rate of 7%, compound annually</p>
+      </div>
+      <div>
+      <h3>Peet's coffee of the day(Large)</h3>
+                    <div class="aslidecontainer">
+                        <input id="coffee" type="range" min="1" max="100" value="50" class="aslider" onchange="computeSaving()">
+                        <p># of cups: <span id="coffee1"></span></p>
+                    </div>
+                    <script>
+                        var slider1 = document.getElementById("coffee");
+                        var output1 = document.getElementById("coffee1");
+                        output1.innerHTML = slider1.value;
+
+                        slider1.oninput = function () {
+                            output1.innerHTML = this.value;
+                        }
+                    </script>
+
+
+                    <h3>Double double meal from In&Out</h3>
+                    <div class="aslidecontainer">
+                        <input id="burger" type="range" min="1" max="100" value="50" class="aslider" onchange="computeSaving()">
+                        <p># of meals: <span id="burger1"></span></p>
+                    </div>
+
+                    <script>
+                        var slider2 = document.getElementById("burger");
+                        var output2 = document.getElementById("burger1");
+                        output2.innerHTML = slider2.value;
+
+                        slider2.oninput = function () {
+                            output2.innerHTML = this.value;
+                        }
+                    </script>
+                    <h3>Large (14") Hand Tossed Buffalo Chicken pizza from Domino's</h3>
+                    <div class="aslidecontainer">
+                        <input id="pizza" type="range" min="1" max="50" value="25" class="aslider" onchange="computeSaving()">
+                        <p># of pizza: <span id="pizza1"></span></p>
+                    </div>
+
+                    <script>
+                        var slider3 = document.getElementById("pizza");
+                        var output3 = document.getElementById("pizza1");
+                        output3.innerHTML = slider3.value;
+
+                        slider3.oninput = function () {
+                            output3.innerHTML = this.value;
+                        }
+                    </script>
+                    <h3>Friday movie night at CENTURY 20 Daly City</h3>
+                    <div class="aslidecontainer">
+                        <input id="movie" type="range" min="1" max="5" value="2" class="aslider" onchange="computeSaving()">
+                        <p># of movies: <span id="movie1"></span></p>
+                    </div>
+
+                    <script>
+                        var slider4 = document.getElementById("movie");
+                        var output4 = document.getElementById("movie1");
+                        output4.innerHTML = slider4.value;
+
+                        slider4.oninput = function () {
+                            output4.innerHTML = this.value;
+                        }
+                    </script>
+                    <h2 id="result"></h2>
+      </div>
+    </div>
     </section>
 
   <!-- Contact Section -->
@@ -405,7 +497,7 @@
                   <div class="divider-custom-line"></div>
                 </div>
                 <!-- Portfolio Modal - Image -->
-                <img class="img-fluid rounded mb-5" src="img/portfolio/cabin.png" alt="">
+                <img class="img-fluid rounded mb-5" src="img/portfolio/1.png" alt="">
                 <!-- Portfolio Modal - Text -->
                 <p class="mb-5">To be filled</p>
                 <button class="btn btn-primary" href="#" data-dismiss="modal">
@@ -444,7 +536,7 @@
                   <div class="divider-custom-line"></div>
                 </div>
                 <!-- Portfolio Modal - Image -->
-                <img class="img-fluid rounded mb-5" src="img/portfolio/cake.png" alt="">
+                <img class="img-fluid rounded mb-5" src="img/portfolio/2.png" alt="">
                 <!-- Portfolio Modal - Text -->
                 <p class="mb-5">To be filled</p>
                 <button class="btn btn-primary" href="#" data-dismiss="modal">
@@ -483,7 +575,7 @@
                   <div class="divider-custom-line"></div>
                 </div>
                 <!-- Portfolio Modal - Image -->
-                <img class="img-fluid rounded mb-5" src="img/portfolio/circus.png" alt="">
+                <img class="img-fluid rounded mb-5" src="img/portfolio/3.png" alt="">
                 <!-- Portfolio Modal - Text -->
                 <p class="mb-5">To be filled</p>
                 <button class="btn btn-primary" href="#" data-dismiss="modal">
@@ -522,7 +614,7 @@
                   <div class="divider-custom-line"></div>
                 </div>
                 <!-- Portfolio Modal - Image -->
-                <img class="img-fluid rounded mb-5" src="img/portfolio/game.png" alt="">
+                <img class="img-fluid rounded mb-5" src="img/portfolio/4.png" alt="">
                 <!-- Portfolio Modal - Text -->
                 <p class="mb-5">To be filled</p>
                 <button class="btn btn-primary" href="#" data-dismiss="modal">
@@ -561,7 +653,7 @@
                   <div class="divider-custom-line"></div>
                 </div>
                 <!-- Portfolio Modal - Image -->
-                <img class="img-fluid rounded mb-5" src="img/portfolio/safe.png" alt="">
+                <img class="img-fluid rounded mb-5" src="img/portfolio/5.png" alt="">
                 <!-- Portfolio Modal - Text -->
                 <p class="mb-5">To be filled</p>
                 <button class="btn btn-primary" href="#" data-dismiss="modal">
@@ -600,7 +692,7 @@
                   <div class="divider-custom-line"></div>
                 </div>
                 <!-- Portfolio Modal - Image -->
-                <img class="img-fluid rounded mb-5" src="img/portfolio/submarine.png" alt="">
+                <img class="img-fluid rounded mb-5" src="img/portfolio/6.png" alt="">
                 <!-- Portfolio Modal - Text -->
                 <p class="mb-5">To be filled</p>
                 <button class="btn btn-primary" href="#" data-dismiss="modal">
@@ -628,6 +720,8 @@
 
   <!-- Custom scripts for this template -->
   <script src="js/freelancer.min.js"></script>
+
+  
 
 </body>
 
