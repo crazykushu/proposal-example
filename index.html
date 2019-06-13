@@ -17,37 +17,15 @@
 
 	<!-- Theme CSS -->
 	<link href="css/freelancer.css" rel="stylesheet">
-  <!-- Calculator JS -->
-  <script src="js/calculator.js"></script>
-  <!-- Calculator function -->
-  <script>
-    function computeSaving() {
-                var coffee = document.getElementById('coffee').value * 3;
-                var burger = document.getElementById('burger').value * 8;
-                var pizza = document.getElementById('pizza').value * 20;
-                var movie = document.getElementById('movie').value * 14;
-                var totalMonth = coffee + burger + pizza + movie;
-                var totalYear = totalMonth * 12;
-                var result = 0;
-                for (i = 0; i < 30; i++)
-                {
-                    result = result + totalYear;
-                    result = (result * 1.07);
-                }
-                result = result.toFixed(2).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-                document.getElementById('result').innerHTML = "Your total saving after 30 years could be: $" + result;
-            }
-            </script>
 
 </head>
 
 <body id="page-top">
-<div onLoad=
-	<!-- Navigation -->
-	<nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
-		<div class="container">
-			<a class="navbar-brand js-scroll-trigger" href="#page-top">Not Mint</a>
-			<button class="navbar-toggler navbar-toggler-right text-uppercase font-weight-bold bg-primary text-white rounded" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+	<div onLoad=< !-- Navigation -->
+		<nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
+			<div class="container">
+				<a class="navbar-brand js-scroll-trigger" href="#page-top">Not Mint</a>
+				<button class="navbar-toggler navbar-toggler-right text-uppercase font-weight-bold bg-primary text-white rounded" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         Navigation
         <i class="fas fa-bars"></i>
       </button>
@@ -720,7 +698,9 @@
 
   <!-- Custom scripts for this template -->
   <script src="js/freelancer.min.js"></script>
-
+  
+  <!-- Calculator JS -->
+	<script src="js/calculator.js"></script>
   
 
 </body>
