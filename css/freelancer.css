@@ -10880,7 +10880,7 @@ form .row:first-child .floating-label-form-group {
 }
 
 .aaslider {
-  width: 300px;
+  //width: 300px;
   text-align: center;
   overflow: hidden;
   -webkit-overflow-scrolling: touch;
